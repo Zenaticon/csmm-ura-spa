@@ -1,0 +1,218 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+// Include any default variable overrides here (though functions won't be available)
+$primary: #f81a43;
+$secondary: #0693eb;
+// FIXME $btn-color is not changing the color on the website.
+$btn-color: white;
+
+@import "../bootstrap/scss/bootstrap";
+
+// Then add additional custom code here
+
+* {
+    // margin: 0;
+    // padding: 0;
+    // font-family: 'Poppins', sans-serif;
+    // font-weight: 400;
+    // outline: none !important;
+    // list-style: none !important;
+    text-decoration: none !important;
+}
+
+::-moz-selection { /* Code for Firefox */
+    color: #000;
+    background: $primary;
+    text-shadow: none;
+}
+
+::selection {
+    color: #000;
+    background: $primary;
+    text-shadow: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background:rgba(0, 0, 0, 0.6); 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.6); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #10101591;
+}
+
+// nav {
+//     border-bottom: 1px solid rgb(100, 100, 100);
+// }
+
+header {
+    margin-top: 56px;
+}
+
+.overflow-scroll {
+    scroll-behavior: none;
+}
+
+.row div.card {
+    padding: 0;
+}
+
+.club-activity {
+    div.card {
+        border-radius: 1rem;
+        //border: 2px solid rgba(0, 0, 0, 0.6);
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        transition: transform 0.2s, box-shadow 0.2s;
+
+        .card-header {
+            border-radius: 1rem 1rem 0 0;
+            color: white;
+            font-size: x-large;
+            background-color: $secondary;
+        }
+
+        .card-body {
+            //background-image: url("../img/activity/image.jpg");
+            //background-size: cover;
+            font-size: large;
+        }
+    }
+
+    div.card:hover {
+        transform: scale(1.1);
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+    }
+}
+
+.club-testimonials {
+    div.card {
+        margin-top: 50px;
+        border-radius: 1rem;
+        //border: 2px solid rgba(0, 0, 0, 0.6);
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        transition: transform 0.2s, box-shadow 0.2s;
+
+        .card-header {
+            img {
+                height: 150px;
+                width: 150px;
+                border-radius: 50%;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            .testimonials-text {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translate(-50%, 0);
+            }
+            color: white;
+            height: 155px;
+            position: relative;
+            border-radius: 1rem 1rem 0 0;
+            background-color: $secondary;
+        }
+
+        .card-body {
+            //background-image: url("../img/activity/image.jpg");
+            //background-size: cover;
+            font-size: large;
+        }
+    }
+
+    div.card:hover {
+        transform: scale(1.1);
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+    }
+}
+
+.student-links {
+    a {
+        text-decoration: none;
+        div.card {
+            border-radius: 1rem;
+            //border: 2px solid rgba(0, 0, 0, 0.6);
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+            transition: transform 0.2s, box-shadow 0.2s;
+    
+            .card-header {
+                border-radius: 1rem 1rem 0 0;
+                color: white;
+                font-size: x-large;
+                background-color: $secondary;
+            }
+    
+            .card-body {
+                color: #000;
+                //background-image: url("../img/activity/image.jpg");
+                //background-size: cover;
+                font-size: large;
+            }
+        }
+    }
+
+    div.card:hover {
+        transform: scale(1.1);
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+    }
+}
+
+.footer {
+    color: white;
+}
+
+@for $var from 0 to 100 {
+    @if $var % 5 == 0 {
+        .bg-opacity-#{$var} {
+            --bs-bg-opacity: #{calc($var/100)};
+        }
+    }
+}
+
+.bg-dark-second {
+    background-color: rgba(0, 0, 0, var(--bs-bg-dark-opacity, 1));
+}
+
+@for $var from 0 to 100 {
+    @if $var % 5 == 0 {
+        .bg-dark-opacity-#{$var} {
+            --bs-bg-dark-opacity: #{calc($var/100)};
+        }
+    }
+}
+
+.link-white {
+    a {
+        color: white;
+    }
+
+    a:hover {
+        color: rgb(199, 199, 199);
+    }
+}
+
+nav {
+    font-weight: 600;
+}
+
+#header-image {
+    // background-image: url("../img/headers/header (1).jpg");
+    width: 100%;
+    height: 30vh;
+    background-size:cover;
+    background-position: center;
+}
