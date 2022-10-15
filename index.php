@@ -41,7 +41,7 @@
               <a class="nav-link" ng-class="{active:isActive('/')}" aria-current="page" href="#/!">Acasă</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" ng-class="{active:isActive('/about-us')}" href="#!about-us">Despre Noi</a>
+              <a class="nav-link" ng-class="{active:isActive('/about-us')}" href="about-us">Despre Noi</a>
             </li>
             <li class="nav-item" hidden>
               <a class="nav-link" ng-class="{active:isActive('/events')}" href="#!events">Evenimente</a>
