@@ -21,7 +21,8 @@ $btn-color: white;
     text-decoration: none !important;
 }
 
-::-moz-selection { /* Code for Firefox */
+::-moz-selection {
+    /* Code for Firefox */
     color: #000;
     background: $primary;
     text-shadow: none;
@@ -40,12 +41,12 @@ $btn-color: white;
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background:rgba(0, 0, 0, 0.6); 
+    background: rgba(0, 0, 0, 0.6);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.6); 
+    background: rgba(0, 0, 0, 0.6);
 }
 
 /* Handle on hover */
@@ -65,14 +66,14 @@ header {
     scroll-behavior: none;
 }
 
-.row div.card {
-    padding: 0;
-}
+// .row div.card {
+//     padding: 0;
+// }
 
 .club-activity {
     div.card {
         border-radius: 1rem;
-        //border: 2px solid rgba(0, 0, 0, 0.6);
+        border: 2px solid rgba(0, 0, 0, 0.6);
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
         transition: transform 0.2s, box-shadow 0.2s;
 
@@ -90,9 +91,11 @@ header {
         }
     }
 
-    div.card:hover {
-        transform: scale(1.1);
-        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+    @media only screen and (min-width: 576px) {
+        div.card:hover {
+            transform: scale(1.1);
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+        }
     }
 }
 
@@ -114,12 +117,14 @@ header {
                 left: 50%;
                 transform: translate(-50%, -50%);
             }
+
             .testimonials-text {
                 position: absolute;
                 bottom: 0;
                 left: 50%;
                 transform: translate(-50%, 0);
             }
+
             color: white;
             height: 155px;
             position: relative;
@@ -134,28 +139,31 @@ header {
         }
     }
 
-    div.card:hover {
-        transform: scale(1.1);
-        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+    @media only screen and (min-width: 576px) {
+        div.card:hover {
+            transform: scale(1.1);
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+        }
     }
 }
 
 .student-links {
     a {
         text-decoration: none;
+
         div.card {
             border-radius: 1rem;
             //border: 2px solid rgba(0, 0, 0, 0.6);
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
             transition: transform 0.2s, box-shadow 0.2s;
-    
+
             .card-header {
                 border-radius: 1rem 1rem 0 0;
                 color: white;
                 font-size: x-large;
                 background-color: $secondary;
             }
-    
+
             .card-body {
                 color: #000;
                 //background-image: url("../img/activity/image.jpg");
@@ -165,9 +173,11 @@ header {
         }
     }
 
-    div.card:hover {
-        transform: scale(1.1);
-        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+    @media only screen and (min-width: 576px) {
+        div.card:hover {
+            transform: scale(1.1);
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+        }
     }
 }
 
@@ -176,7 +186,7 @@ header {
 }
 
 @for $var from 0 to 100 {
-    @if $var % 5 == 0 {
+    @if $var % 5==0 {
         .bg-opacity-#{$var} {
             --bs-bg-opacity: #{calc($var/100)};
         }
@@ -188,7 +198,7 @@ header {
 }
 
 @for $var from 0 to 100 {
-    @if $var % 5 == 0 {
+    @if $var % 5==0 {
         .bg-dark-opacity-#{$var} {
             --bs-bg-dark-opacity: #{calc($var/100)};
         }
@@ -213,6 +223,6 @@ nav {
     // background-image: url("../img/headers/header (1).jpg");
     width: 100%;
     height: 30vh;
-    background-size:cover;
+    background-size: cover;
     background-position: center;
 }
