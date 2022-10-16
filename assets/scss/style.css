@@ -10933,7 +10933,8 @@ textarea.form-control-lg {
   text-decoration: none !important;
 }
 
-::-moz-selection { /* Code for Firefox */
+::-moz-selection {
+  /* Code for Firefox */
   color: #000;
   background: #f81a43;
   text-shadow: none;
@@ -10973,12 +10974,9 @@ header {
   scroll-behavior: none;
 }
 
-.row div.card {
-  padding: 0;
-}
-
 .club-activity div.card {
   border-radius: 1rem;
+  border: 2px solid rgba(0, 0, 0, 0.6);
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
   transition: transform 0.2s, box-shadow 0.2s;
 }
@@ -10991,9 +10989,11 @@ header {
 .club-activity div.card .card-body {
   font-size: large;
 }
-.club-activity div.card:hover {
-  transform: scale(1.1);
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+@media only screen and (min-width: 576px) {
+  .club-activity div.card:hover {
+    transform: scale(1.1);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+  }
 }
 
 .club-testimonials div.card {
@@ -11027,9 +11027,11 @@ header {
 .club-testimonials div.card .card-body {
   font-size: large;
 }
-.club-testimonials div.card:hover {
-  transform: scale(1.1);
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+@media only screen and (min-width: 576px) {
+  .club-testimonials div.card:hover {
+    transform: scale(1.1);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+  }
 }
 
 .student-links a {
@@ -11050,9 +11052,11 @@ header {
   color: #000;
   font-size: large;
 }
-.student-links div.card:hover {
-  transform: scale(1.1);
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+@media only screen and (min-width: 576px) {
+  .student-links div.card:hover {
+    transform: scale(1.1);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+  }
 }
 
 .footer {
