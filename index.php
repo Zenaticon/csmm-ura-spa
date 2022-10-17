@@ -1,3 +1,7 @@
+<?php
+    define('SITE_KEY', '6LeLPYciAAAAAPuSgREpO4Qy0CiK_wjPB2ySggdP');
+    define('SECRET_KEY', '6LeLPYciAAAAAJYbPejCRU4VcIjQIi-f5Dkvw83K');
+?>
 <!DOCTYPE html>
 <html lang="ro">
 
@@ -21,12 +25,14 @@
   <!-- Angular JS - route -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+  <!-- Google reCaptcha -->
+  <script src='https://www.google.com/recaptcha/api.js?render=<?php echo SITE_KEY; ?>'></script>
 </head>
 
 <body ng-app="myApp" ng-controller="ro">
   <div class="container-fluid bg-dark text-white fixed-top p-2">
     <div class="container">
-      <p class="m-0">Email: clubmmk18@gmail.com</p>
+      <p class="m-0">Email: <a href="mailto:clubmmk18@gmail.com" class="text-white">clubmmk18@gmail.com</a></p>
     </div>
   </div>
   <nav class="navbar navbar-expand-lg bg-secondary navbar-dark bg-opacity-95 fixed-top shadow" style="top: 40px">
@@ -45,7 +51,7 @@
           <li class="nav-item">
             <a class="nav-link" ng-class="{ active: isActive('/') }" aria-current="page" href="#/!">Acasă</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" hidden>
             <a class="nav-link" ng-class="{ active: isActive('/about-us') }" href="#!about-us">Despre Noi</a>
           </li>
           <li class="nav-item" hidden>
@@ -81,12 +87,12 @@
           </button>
           <ul class="dropdown-menu">
             <li>
-              <a class="dropdown-item" href="#!{{ href }}"><img
+              <a class="dropdown-item disabled" href="#!{{ href }}"><img
                   src="https://img.icons8.com/color/24/000000/romania-circular.png" />
                 {{ langtext.ro }}</a>
             </li>
             <li>
-              <a class="dropdown-item" href="#!en/{{ href }}"><img
+              <a class="dropdown-item disabled" href="#!en/{{ href }}"><img
                   src="https://img.icons8.com/color/24/000000/usa-circular.png" />
                 {{ langtext.en }}</a>
             </li>
@@ -95,6 +101,51 @@
       </div>
     </div>
   </nav>
+
+  <?php
+      if(isset($_POST['g-recaptcha-response'])){
+          function getCaptcha($SecretKey){
+              $Response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".SECRET_KEY."&response={$SecretKey}");
+              $Return = json_decode($Response);
+              return $Return;
+          }
+          $Return = getCaptcha($_POST['g-recaptcha-response']);
+          //var_dump($Return);
+          if($Return->success == true && $Return->score > 0.5){
+              $to = "petremanguta98@gmail.com"; // this is your Email address
+              $from = $_POST['email']; // this is the sender's Email address
+              $full_name = $_POST['full_name'];
+              $subject = "Contact Form";
+              // $subject2 = "Copy of your form submission";
+              $message = $full_name . " wrote:" . "\n\n". $_POST['message'];
+              // $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['message'];
+
+              $headers = array(
+                  "From: {$from}",
+                  "MIME-Version: 1.0",
+                  "Content-Type: text/html;charset=utf-8"
+              );
+              // $headers = "From:" . $from;
+              // $headers2 = "From:" . $to;
+              mail($to,$subject,$message,implode("\r\n",$headers));
+              // mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
+              echo '
+              <div class="container p-0 d-none" style="margin-top: 110px; margin-bottom: -95px;">
+                  <div class="alert alert-success mt-3 h4 alert-dismissible fade show" role="alert">
+                      <i class="bi bi-check-lg"></i> Mesajul a fost trimis cu succes.
+                  </div>
+              </div>';
+              // You can also use header('Location: thank_you.php'); to redirect to another page.
+          }else{
+              echo '
+              <div class="container p-0 d-none" style="margin-top: 110px; margin-bottom: -95px;">
+                  <div class="alert alert-danger mt-3 h4 alert-dismissible fade show" role="alert">
+                      <i class="bi bi-exclamation-triangle"></i> Mesajul nu a fost trimis.
+                  </div>
+              </div>';
+          }
+      }
+  ?>
 
   <main role="main">
     <div ng-view></div>
@@ -118,12 +169,11 @@
               viața personală.
             </p>
           </div>
-          <!-- Când reprezinți un grup ai o mare responsabilitate, este necesar să înțelegi cât mai bine ce se petrece în jurul tău.  -->
           <div class="col-lg-2 col-md-3 col-sm-4 col-6 text-decoration-none link-white">
             <h5>Link-uri utile</h5>
             <div class="d-grid gap-2">
               <a href="#/!">Acasă</a>
-              <a href="#!about-us">Despre Noi</a>
+              <a href="#!about-us" hidden>Despre Noi</a>
               <a href="#!events" hidden>Evenimente</a>
               <a href="#!blog" hidden>Blog</a>
               <a href="#!student-links">Link-uri Studenți</a>
@@ -139,9 +189,11 @@
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6 text-decoration-none link-white">
-            <h5>Link-uri diverse</h5>
+            <h5>Social</h5>
             <div class="d-grid gap-2">
-              <a href="#!hall-of-fame">Contribuitori website</a>
+              <a href="https://www.instagram.com/ura.clubmm/" target="_blank">Instagram</a>
+              <a href="https://www.facebook.com/ClubMMURA/" target="_blank">Facebook</a>
+              <a href="#!hall-of-fame" hidden>Contribuitori website</a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6 text-decoration-none link-white">
@@ -200,15 +252,20 @@
         return route === $location.path();
       };
 
+      // $scope.visible = " d-none";
+      // $scope.reset = function(){
+      //   $scope.visible = "";
+      // };
+
       $scope.href = $location.path().substring(1);
     });
-    app.controller("en", function ($scope) {
-      $scope.lang = "English";
-      $scope.langtext = {
-        ro: "Romanian",
-        en: "English",
-      };
-    });
+    // app.controller("en", function ($scope) {
+    //   $scope.lang = "English";
+    //   $scope.langtext = {
+    //     ro: "Romanian",
+    //     en: "English",
+    //   };
+    // });
       // app.controller('widgetsController', function($scope, $location) {
       //     $scope.isActive = function(route) {
       //         return route === $location.path();
