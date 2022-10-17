@@ -5,10 +5,16 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Cariera în CSMM este o călătorie de 4 semestre care va da șansa membrilor să își dezvolte viziunea, abilitățile de lider, vocea și încrederea în aptitudinile personale. În cadrul programelor noastre vor învăța să coordoneze eficient echipe, cum să se facă văzuți, cum să se facă auziți, și cum să își organizeze eficient viața personală." />
+  <meta name="description" content="Cariera în CMM este o călătorie de 4 semestre care va da șansa membrilor să își dezvolte viziunea, abilitățile de lider, vocea și încrederea în aptitudinile personale. În cadrul programelor noastre vor învăța să coordoneze eficient echipe, cum să se facă văzuți, cum să se facă auziți, și cum să își organizeze eficient viața personală." />
   <meta name="author" content="" />
-  <meta name="keywords" content="csmm, csmm-ura">
-  <title>Clubul Studențesc de Management-Marketing</title>
+  <meta name="keywords" content="csmm, csmm-ura, cmm, cmm-ura">
+  <!--  Essential META Tags -->
+  <meta property="og:title" content="Clubul de Management-Marketing Recrutează">
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="assets/img/headers/header-1.jpeg">
+  <meta property="og:url" content="https://csmm-ura.herokuapp.com/#!/recruitment">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Clubul de Management-Marketing Recrutează</title>
   <!-- Favicon-->
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
   <!-- Font Awesome icons (free version)-->
@@ -108,10 +114,10 @@
           <div class="col-lg-4 col-md-6 col-sm-8 col-12">
             <img class="d-inline-block align-top" src="assets/img/cmm-500.jpg" alt="" width="50px" height="50px" />
             <h5 class="d-inline-block w-75 mx-2">
-              Clubul Studențesc de Management-Marketing
+              Clubul de Management-Marketing
             </h5>
             <p class="text-justify mt-2">
-              Cariera în CSMM este o călătorie de 4 semestre care va da șansa
+              Cariera în CMM este o călătorie de 4 semestre care va da șansa
               membrilor să își dezvolte viziunea, abilitățile de lider, vocea
               și încrederea în aptitudinile personale. În cadrul programelor
               noastre vor învăța să coordoneze eficient echipe, cum să se facă
@@ -149,14 +155,14 @@
           <div class="col-lg-2 col-md-3 col-sm-4 col-6 text-decoration-none link-white">
             <h5>Legal</h5>
             <div class="d-grid gap-2">
-              <a href="http://privacy.rau.ro">GDPR</a>
+              <a href="http://privacy.rau.ro" target="_blank">GDPR</a>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="container-fluid footer text-center p-3 bg-dark-second bg-dark-opacity-70">
-      <p class="m-0">Copyright &copy; 2022 www.csmm-ura.org</p>
+      <p class="m-0">Copyright &copy; 2022 www.cmm-ura.org</p>
     </div>
   </footer>
   <!-- SCRIPTS -->
