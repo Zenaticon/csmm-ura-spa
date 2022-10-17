@@ -5,16 +5,26 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Cariera în CMM este o călătorie de 4 semestre care va da șansa membrilor să își dezvolte viziunea, abilitățile de lider, vocea și încrederea în aptitudinile personale. În cadrul programelor noastre vor învăța să coordoneze eficient echipe, cum să se facă văzuți, cum să se facă auziți, și cum să își organizeze eficient viața personală." />
-  <meta name="author" content="" />
-  <meta name="keywords" content="csmm, csmm-ura, cmm, cmm-ura">
-  <!--  Essential META Tags -->
-  <meta property="og:title" content="Clubul de Management-Marketing Recrutează">
-  <meta property="og:type" content="article" />
-  <meta property="og:image" content="assets/img/headers/header-1.jpeg">
-  <meta property="og:url" content="https://csmm-ura.herokuapp.com/#!/recruitment">
-  <meta name="twitter:card" content="summary_large_image">
+  <!-- Primary Meta Tags -->
   <title>Clubul de Management-Marketing Recrutează</title>
+  <meta name="title" content="Clubul de Management-Marketing Recrutează">
+  <meta name="description" content="Cariera în CMM este o călătorie de 4 semestre care va da șansa membrilor să își dezvolte viziunea, abilitățile de lider, vocea și încrederea în aptitudinile personale. În cadrul programelor noastre vor învăța să coordoneze eficient echipe, cum să se facă văzuți, cum să se facă auziți, și cum să își organizeze eficient viața personală.">
+  <meta name="author" content="Petre Mănguță, Laurențiu Luican și contribuitorii din cadrul CMM" />
+  <meta name="keywords" content="csmm, csmm-ura, cmm, cmm-ura">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://csmm-ura.herokuapp.com/">
+  <meta property="og:title" content="Clubul de Management-Marketing Recrutează">
+  <meta property="og:description" content="Cariera în CMM este o călătorie de 4 semestre care va da șansa membrilor să își dezvolte viziunea, abilitățile de lider, vocea și încrederea în aptitudinile personale. În cadrul programelor noastre vor învăța să coordoneze eficient echipe, cum să se facă văzuți, cum să se facă auziți, și cum să își organizeze eficient viața personală.">
+  <meta property="og:image" content="assets/img/headers/header-1.jpeg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://csmm-ura.herokuapp.com/">
+  <meta property="twitter:title" content="Clubul de Management-Marketing Recrutează">
+  <meta property="twitter:description" content="Cariera în CMM este o călătorie de 4 semestre care va da șansa membrilor să își dezvolte viziunea, abilitățile de lider, vocea și încrederea în aptitudinile personale. În cadrul programelor noastre vor învăța să coordoneze eficient echipe, cum să se facă văzuți, cum să se facă auziți, și cum să își organizeze eficient viața personală.">
+  <meta property="twitter:image" content="assets/img/headers/header-1.jpeg">
   <!-- Favicon-->
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
   <!-- Font Awesome icons (free version)-->
