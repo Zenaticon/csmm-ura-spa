@@ -1,7 +1,3 @@
-<?php
-    define('SITE_KEY', '6LeLPYciAAAAAPuSgREpO4Qy0CiK_wjPB2ySggdP');
-    define('SECRET_KEY', '6LeLPYciAAAAAJYbPejCRU4VcIjQIi-f5Dkvw83K');
-?>
 <!DOCTYPE html>
 <html lang="ro">
 
@@ -25,11 +21,9 @@
   <!-- Angular JS - route -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
-  <!-- Google reCaptcha -->
-  <script src='https://www.google.com/recaptcha/api.js?render=<?php echo SITE_KEY; ?>'></script>
 </head>
 
-<body ng-app="myApp" ng-controller="ro">
+<body ng-app="myApp" ng-controller="myCtrl">
   <div class="container-fluid bg-dark text-white fixed-top p-2">
     <div class="container">
       <p class="m-0">Email: <a href="mailto:clubmmk18@gmail.com" class="text-white">clubmmk18@gmail.com</a></p>
@@ -67,6 +61,7 @@
           <li class="nav-item">
             <a class="nav-link" ng-class="{ active: isActive('/contact') }" href="#!contact">Contact</a>
           </li>
+          {{locationz}}
         </ul>
         <!-- <form class="d-flex" role="search">
             <input
@@ -79,20 +74,20 @@
               Search
             </button>
           </form> -->
-        <div class="dropdown">
+        <div class="dropdown d-none">
           <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
             aria-expanded="false">
-            <img src="https://img.icons8.com/color/24/000000/romania-circular.png" />
+            <img src="{{langimg}}" />
             {{ lang }}
           </button>
           <ul class="dropdown-menu">
             <li>
-              <a class="dropdown-item disabled" href="#!{{ href }}"><img
+              <a class="dropdown-item{{langdisable.ro}}" href="#!{{ hrefz.ro }}" ng-click='go()'><img
                   src="https://img.icons8.com/color/24/000000/romania-circular.png" />
                 {{ langtext.ro }}</a>
             </li>
             <li>
-              <a class="dropdown-item disabled" href="#!en/{{ href }}"><img
+              <a class="dropdown-item{{langdisable.en}}" href="#!{{ hrefz.en }}" ng-click='go()'><img
                   src="https://img.icons8.com/color/24/000000/usa-circular.png" />
                 {{ langtext.en }}</a>
             </li>
@@ -101,52 +96,7 @@
       </div>
     </div>
   </nav>
-
-  <?php
-      if(isset($_POST['g-recaptcha-response'])){
-          function getCaptcha($SecretKey){
-              $Response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".SECRET_KEY."&response={$SecretKey}");
-              $Return = json_decode($Response);
-              return $Return;
-          }
-          $Return = getCaptcha($_POST['g-recaptcha-response']);
-          //var_dump($Return);
-          if($Return->success == true && $Return->score > 0.5){
-              $to = "petremanguta98@gmail.com"; // this is your Email address
-              $from = $_POST['email']; // this is the sender's Email address
-              $full_name = $_POST['full_name'];
-              $subject = "Contact Form";
-              // $subject2 = "Copy of your form submission";
-              $message = $full_name . " wrote:" . "\n\n". $_POST['message'];
-              // $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['message'];
-
-              $headers = array(
-                  "From: {$from}",
-                  "MIME-Version: 1.0",
-                  "Content-Type: text/html;charset=utf-8"
-              );
-              // $headers = "From:" . $from;
-              // $headers2 = "From:" . $to;
-              mail($to,$subject,$message,implode("\r\n",$headers));
-              // mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
-              echo '
-              <div class="container p-0 d-none" style="margin-top: 110px; margin-bottom: -95px;">
-                  <div class="alert alert-success mt-3 h4 alert-dismissible fade show" role="alert">
-                      <i class="bi bi-check-lg"></i> Mesajul a fost trimis cu succes.
-                  </div>
-              </div>';
-              // You can also use header('Location: thank_you.php'); to redirect to another page.
-          }else{
-              echo '
-              <div class="container p-0 d-none" style="margin-top: 110px; margin-bottom: -95px;">
-                  <div class="alert alert-danger mt-3 h4 alert-dismissible fade show" role="alert">
-                      <i class="bi bi-exclamation-triangle"></i> Mesajul nu a fost trimis.
-                  </div>
-              </div>';
-          }
-      }
-  ?>
-
+  
   <main role="main">
     <div ng-view></div>
   </main>
@@ -210,57 +160,98 @@
     </div>
   </footer>
   <!-- SCRIPTS -->
+  
   <script>
     var app = angular.module("myApp", ["ngRoute"]);
     app.config(function ($routeProvider) {
       $routeProvider
         .when("/", {
-          templateUrl: "main.htm",
-          controller: "ro",
+          templateUrl: "main.htm"
           // controller: "widgetsController"
           // activetab: 'home'
         })
         .when("/about-us", {
-          templateUrl: "about-us.htm",
-          controller: "ro",
+          templateUrl: "about-us.htm"
         })
         .when("/student-links", {
-          templateUrl: "student-links.htm",
-          controller: "ro",
+          templateUrl: "student-links.htm"
         })
         .when("/contact", {
-          templateUrl: "contact.htm",
-          controller: "ro",
+          templateUrl: "contact.htm"
         })
         .when("/recruitment", {
-          templateUrl: "recruitment.htm",
-          controller: "ro",
+          templateUrl: "recruitment.htm"
         })
         .otherwise({
-          templateUrl: "404.htm",
-          controller: "ro",
+          templateUrl: "404.htm"
         });
     });
-    app.controller("ro", function ($scope, $location) {
-      $scope.lang = "Română";
-      $scope.langtext = {
-        ro: "Română",
-        en: "Engleză",
-      };
-
+    app.controller("myCtrl", function ($scope, $location) {
+      
       $scope.isActive = function (route) {
         return route === $location.path();
       };
 
-      // $scope.visible = " d-none";
-      // $scope.reset = function(){
-      //   $scope.visible = "";
-      // };
+      // $scope.href = $location.path().substring(1);
+      console.log("outside");
+      console.log($scope.href);
 
-      $scope.href = $location.path().substring(1);
+      // FIXME Solve the problem
+      $scope.go = function() {
+        if($scope.langtag == "ro")
+        {
+          $scope.langtext = {
+            ro: "Română",
+            en: "Engleză",
+          };
+        }else{
+          $scope.langtext = {
+            ro: "Romanian",
+            en: "English",
+          };
+        }
+
+        $scope.href = $location.path().substring(1);
+        console.log("inside");
+        console.log($scope.href);
+
+        if($location.path().slice(0,4) == "/en/"){
+          $scope.langtag = "en";
+          $scope.lang = "English";
+          $scope.langimg = "https://img.icons8.com/color/24/000000/usa-circular.png";
+          $scope.langdisable = {
+            ro: "",
+            en: " disabled"
+          }
+          $scope.hrefz = {
+            ro: $scope.href.substring(3),
+            en: $scope.href
+          }
+        }else{
+          $scope.langtag = "ro";
+          $scope.lang = "Română";
+          $scope.langimg = "https://img.icons8.com/color/24/000000/romania-circular.png";
+          $scope.langdisable = {
+            ro: " disabled",
+            en: ""
+          }
+          $scope.hrefz = {
+            ro: $scope.href,
+            en: "en/" + $scope.href
+          }
+        }
+      }
+
+      // location.reload()
+
+      $scope.go();
+
     });
     // app.controller("en", function ($scope) {
     //   $scope.lang = "English";
+    //   $scope.langTag = function() {
+    //       $scope.langtag = "en";
+    //   }
     //   $scope.langtext = {
     //     ro: "Romanian",
     //     en: "English",
