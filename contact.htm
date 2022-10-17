@@ -1,4 +1,4 @@
-<style>#header-image{background-image: url("assets/img/headers/header (2).jpg");}</style>
+<style>#header-image{background-image: url("assets/img/headers/header-7.jpg");}</style>
 <div class="container" id="header-image" style="margin-top: 110px;">
 <!-- <img src="assets/img/headers/header (1).jpg" alt="" style="width: 100%; height: 30vh; background-size:cover; background-position: center;"> -->
 </div>
@@ -11,16 +11,53 @@
 <div class="container my-5">
     <h1>Contact</h1>
     <!-- TODO Add content. -->
-    <div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam in quos reprehenderit! Magnam iure, voluptate, quod nostrum quia dignissimos enim blanditiis at facilis modi voluptatibus ea harum, est voluptatem sequi!
-        Consectetur quasi soluta eos, accusamus consequatur dolorum fugit dolore illum quas natus. Mollitia obcaecati perspiciatis, quod velit quos delectus iste optio alias non nisi, fugit laboriosam incidunt ea cupiditate numquam.
-        Similique velit voluptatum vitae deleniti quo facilis eveniet ex mollitia quas unde error sapiente exercitationem nemo, facere earum aspernatur molestias optio a recusandae reprehenderit doloribus vero voluptas. Maxime, tempora nemo?
-        Quisquam laboriosam deleniti, sed explicabo hic recusandae earum deserunt, ea nulla quasi exercitationem autem rerum quis saepe dicta accusantium odit! Accusantium quisquam reprehenderit adipisci omnis ratione est aperiam eos corrupti.
-        Fugit debitis odit alias eveniet itaque quibusdam commodi atque ullam? Officiis amet, distinctio natus impedit quibusdam error tempora praesentium voluptatum nisi iure, fugit magnam dolor consectetur blanditiis consequuntur, odit molestiae.
-        Minus fuga iste, soluta temporibus voluptatem sint aliquam incidunt. Dolorum corporis quos ea nisi velit cupiditate modi officiis porro nihil repellat quas aliquam aliquid nam ad, in amet consequuntur numquam?
-        Sequi at veniam minus iusto cumque nam, culpa, repellendus earum debitis velit commodi architecto? Numquam dolorum nostrum labore sequi iusto, fuga, distinctio dolore sint quaerat similique deserunt adipisci optio porro.
-        Explicabo modi facere adipisci sunt iste. Repellat, odit quaerat inventore maiores veniam sunt esse temporibus vero nesciunt officia dicta earum nisi ratione ut voluptas facere rerum fugiat, ex pariatur excepturi.
-        Vero fuga debitis enim iusto beatae eos consequatur quis, in laborum sapiente aperiam non magni eum facere dolor fugiat qui totam dolorum accusamus maxime blanditiis repellendus? Minima recusandae voluptas corporis!
-        Qui dignissimos pariatur aliquid cum corporis odit! Autem suscipit nobis tenetur omnis perferendis molestias id! Nesciunt quibusdam eligendi, molestias esse quas officiis dolorem sequi quod iure, sint, quia ut adipisci!</p>
+    
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-md-6 p-4">
+                <h5 class="mb-4">Ai întrebări legate de club? Completează formularul și lasă-ne mesajul tău:</h5>
+                <form action="" method="post" form-validate>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" name="full_name" placeholder="First name & Last name" required>
+                        <label for="floatingInput">Nume și Prenume</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com" required>
+                        <label for="floatingInput">Adresa de email</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" placeholder="Leave a message here" name="message" id="floatingTextarea2" style="min-height: 100px" required></textarea>
+                        <label for="floatingTextarea2">Mesaj</label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Sunt de acord cu <a href="http://privacy.rau.ro">GDPR</a>
+                        </label>
+                    </div>
+                    <div class="mb-3">
+                        <button ng-click="reset()" type="submit" class="btn btn-primary float-end text-white btn-animated" id="g-recaptcha-response" name="g-recaptcha-response">Trimite</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6 p-4">
+                <h5 class="mb-4">Informații:</h5>
+                <ul>
+                    <li>Adresă: Bd. Expoziției, Nr.1B, Sector 1, cod 012101, București - România</li>
+                    <li>Instagram: <a href="https://www.instagram.com/ura.clubmm/" target="_blank">ura.clubmm</a></li>
+                    <li>Facebook: <a href="https://www.facebook.com/ClubMMURA/" target="_blank">ClubMMURA</a></li>
+                    <li>E-mail: <a href="mailto:clubmmk18@gmail.com">clubmmk18@gmail.com</a></li>
+                </ul>
+            </div>
+            <script>
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('<?php echo SITE_KEY; ?>', {action: 'messageform'})
+                    .then(function(token) {
+                        //console.log(token);
+                        document.getElementById('g-recaptcha-response').value=token;
+                    });
+                });
+            </script>
+        </div>
     </div>
 </div>

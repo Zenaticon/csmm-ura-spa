@@ -10948,7 +10948,7 @@ textarea.form-control-lg {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 15px;
 }
 
 /* Track */
@@ -10976,23 +10976,21 @@ header {
 
 .club-activity div.card {
   border-radius: 1rem;
-  border: 2px solid rgba(0, 0, 0, 0.6);
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-  transition: transform 0.2s, box-shadow 0.2s;
+  border: 2px solid rgb(121, 121, 121);
+  box-shadow: 0px 8px 0px rgb(121, 121, 121);
+  transition: transform 0.1s, box-shadow 0.1s;
 }
 .club-activity div.card .card-header {
   border-radius: 1rem 1rem 0 0;
-  color: white;
   font-size: x-large;
-  background-color: #0693eb;
 }
 .club-activity div.card .card-body {
   font-size: large;
 }
 @media only screen and (min-width: 576px) {
   .club-activity div.card:hover {
-    transform: scale(1.1);
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+    border: 2px solid #0693eb;
+    box-shadow: 0px 8px 0px #0693eb;
   }
 }
 
@@ -11029,31 +11027,6 @@ header {
 }
 @media only screen and (min-width: 576px) {
   .club-testimonials div.card:hover {
-    transform: scale(1.1);
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
-  }
-}
-
-.student-links a {
-  text-decoration: none;
-}
-.student-links a div.card {
-  border-radius: 1rem;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.student-links a div.card .card-header {
-  border-radius: 1rem 1rem 0 0;
-  color: white;
-  font-size: x-large;
-  background-color: #0693eb;
-}
-.student-links a div.card .card-body {
-  color: #000;
-  font-size: large;
-}
-@media only screen and (min-width: 576px) {
-  .student-links div.card:hover {
     transform: scale(1.1);
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
   }
@@ -11243,4 +11216,14 @@ nav {
   height: 30vh;
   background-size: cover;
   background-position: center;
+}
+
+.btn-animated {
+  box-shadow: 0px 4px 0px #840e24;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-animated:hover {
+  box-shadow: 0px 0px 0px;
+  transform: translateY(4px);
 }/*# sourceMappingURL=style.css.map */

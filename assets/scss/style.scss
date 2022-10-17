@@ -5,53 +5,68 @@
 $primary: #f81a43;
 $secondary: #0693eb;
 // FIXME $btn-color is not changing the color on the website.
-$btn-color: white;
+// $btn-color: white;
 
 @import "../bootstrap/scss/bootstrap";
 
 // Then add additional custom code here
 
 * {
-    // margin: 0;
-    // padding: 0;
-    // font-family: 'Poppins', sans-serif;
-    // font-weight: 400;
-    // outline: none !important;
-    // list-style: none !important;
-    text-decoration: none !important;
+  // margin: 0;
+  // padding: 0;
+  // font-family: 'Poppins', sans-serif;
+  // font-weight: 400;
+  // outline: none !important;
+  // list-style: none !important;
+  text-decoration: none !important;
+//   font-family: Roboto;
 }
 
+// .btn {
+//   font-family: Montserrat;
+// }
+
+// @for $var from 1 to 6 {
+//   .h#{$var} {
+//     font-family: Montserrat;
+//   }
+// }
+
+// .card-header {
+//     font-family: Montserrat;
+// }
+
 ::-moz-selection {
-    /* Code for Firefox */
-    color: #000;
-    background: $primary;
-    text-shadow: none;
+  /* Code for Firefox */
+  color: #000;
+  background: $primary;
+  text-shadow: none;
 }
 
 ::selection {
-    color: #000;
-    background: $primary;
-    text-shadow: none;
+  color: #000;
+  background: $primary;
+  text-shadow: none;
 }
 
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
+  width: 15px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #10101591;
+  background: #10101591;
 }
 
 // nav {
@@ -59,11 +74,11 @@ $btn-color: white;
 // }
 
 header {
-    margin-top: 56px;
+  margin-top: 56px;
 }
 
 .overflow-scroll {
-    scroll-behavior: none;
+  scroll-behavior: none;
 }
 
 // .row div.card {
@@ -71,158 +86,171 @@ header {
 // }
 
 .club-activity {
-    div.card {
-        border-radius: 1rem;
-        border: 2px solid rgba(0, 0, 0, 0.6);
-        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-        transition: transform 0.2s, box-shadow 0.2s;
+  div.card {
+    border-radius: 1rem;
+    border: 2px solid rgb(121, 121, 121);
+    box-shadow: 0px 8px 0px rgb(121, 121, 121);
+    transition: transform 0.1s, box-shadow 0.1s;
 
-        .card-header {
-            border-radius: 1rem 1rem 0 0;
-            color: white;
-            font-size: x-large;
-            background-color: $secondary;
-        }
-
-        .card-body {
-            //background-image: url("../img/activity/image.jpg");
-            //background-size: cover;
-            font-size: large;
-        }
+    .card-header {
+      border-radius: 1rem 1rem 0 0;
+      // color: white;
+      font-size: x-large;
+      // background-color: $secondary;
     }
 
-    @media only screen and (min-width: 576px) {
-        div.card:hover {
-            transform: scale(1.1);
-            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
-        }
+    .card-body {
+      //background-image: url("../img/activity/image.jpg");
+      //background-size: cover;
+      font-size: large;
     }
+  }
+
+  @media only screen and (min-width: 576px) {
+    div.card:hover {
+      // transform: scale(1.1);
+      border: 2px solid $secondary;
+      box-shadow: 0px 8px 0px $secondary;
+    }
+  }
 }
 
 .club-testimonials {
-    div.card {
-        margin-top: 100px;
-        border-radius: 1rem;
-        //border: 2px solid rgba(0, 0, 0, 0.6);
-        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-        transition: transform 0.2s, box-shadow 0.2s;
+  div.card {
+    margin-top: 100px;
+    border-radius: 1rem;
+    //border: 2px solid rgba(0, 0, 0, 0.6);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    transition: transform 0.2s, box-shadow 0.2s;
 
-        .card-header {
-            img {
-                height: 150px;
-                width: 150px;
-                border-radius: 50%;
-                position: absolute;
-                top: 0;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
+    .card-header {
+      img {
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
 
-            .testimonials-text {
-                position: absolute;
-                bottom: 0;
-                left: 50%;
-                transform: translate(-50%, 0);
-            }
+      .testimonials-text {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
 
-            color: white;
-            height: 155px;
-            position: relative;
-            border-radius: 1rem 1rem 0 0;
-            background-color: $secondary;
-        }
-
-        .card-body {
-            //background-image: url("../img/activity/image.jpg");
-            //background-size: cover;
-            font-size: large;
-        }
+      color: white;
+      height: 155px;
+      position: relative;
+      border-radius: 1rem 1rem 0 0;
+      background-color: $secondary;
     }
 
-    @media only screen and (min-width: 576px) {
-        div.card:hover {
-            transform: scale(1.1);
-            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
-        }
+    .card-body {
+      //background-image: url("../img/activity/image.jpg");
+      //background-size: cover;
+      font-size: large;
     }
+  }
+
+  @media only screen and (min-width: 576px) {
+    div.card:hover {
+      transform: scale(1.1);
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+    }
+  }
 }
 
-.student-links {
-    a {
-        text-decoration: none;
+// .student-links {
+//     a {
+//         text-decoration: none;
+//         text-shadow: none;
 
-        div.card {
-            border-radius: 1rem;
-            //border: 2px solid rgba(0, 0, 0, 0.6);
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-            transition: transform 0.2s, box-shadow 0.2s;
+//         div.card {
+//             border-radius: 1rem;
+//             border: 2px solid $secondary;
+//             box-shadow: 0px 8px 0px $secondary;
+//             transition: transform 0.2s, box-shadow 0.2s;
 
-            .card-header {
-                border-radius: 1rem 1rem 0 0;
-                color: white;
-                font-size: x-large;
-                background-color: $secondary;
-            }
+//             .card-header {
+//                 border-radius: 1rem 1rem 0 0;
+//                 color: black;
+//                 font-size: x-large;
+//                 // background-color: $secondary;
+//             }
 
-            .card-body {
-                color: #000;
-                //background-image: url("../img/activity/image.jpg");
-                //background-size: cover;
-                font-size: large;
-            }
-        }
-    }
+//             .card-body {
+//                 color: #000;
+//                 //background-image: url("../img/activity/image.jpg");
+//                 //background-size: cover;
+//                 font-size: large;
+//             }
+//         }
+//     }
 
-    @media only screen and (min-width: 576px) {
-        div.card:hover {
-            transform: scale(1.1);
-            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
-        }
-    }
-}
+//     @media only screen and (min-width: 576px) {
+//         div.card:hover {
+//             // transform: scale(1.1);
+//             transform: translateY(8px);
+//             box-shadow: 0px 0px 10px;
+//         }
+//     }
+// }
 
 .footer {
-    color: white;
+  color: white;
 }
 
 @for $var from 0 to 100 {
-    @if $var % 5==0 {
-        .bg-opacity-#{$var} {
-            --bs-bg-opacity: #{calc($var/100)};
-        }
+  @if $var % 5==0 {
+    .bg-opacity-#{$var} {
+      --bs-bg-opacity: #{calc($var/100)};
     }
+  }
 }
 
 .bg-dark-second {
-    background-color: rgba(0, 0, 0, var(--bs-bg-dark-opacity, 1));
+  background-color: rgba(0, 0, 0, var(--bs-bg-dark-opacity, 1));
 }
 
 @for $var from 0 to 100 {
-    @if $var % 5==0 {
-        .bg-dark-opacity-#{$var} {
-            --bs-bg-dark-opacity: #{calc($var/100)};
-        }
+  @if $var % 5==0 {
+    .bg-dark-opacity-#{$var} {
+      --bs-bg-dark-opacity: #{calc($var/100)};
     }
+  }
 }
 
 .link-white {
-    a {
-        color: white;
-    }
+  a {
+    color: white;
+  }
 
-    a:hover {
-        color: rgb(199, 199, 199);
-    }
+  a:hover {
+    color: rgb(199, 199, 199);
+  }
 }
 
 nav {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 #header-image {
-    // background-image: url("../img/headers/header (1).jpg");
-    width: 100%;
-    height: 30vh;
-    background-size: cover;
-    background-position: center;
+  // background-image: url("../img/headers/header (1).jpg");
+  width: 100%;
+  height: 30vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.btn-animated {
+  box-shadow: 0px 4px 0px #840e24;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-animated:hover {
+  box-shadow: 0px 0px 0px;
+  transform: translateY(4px);
 }
